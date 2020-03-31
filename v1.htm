@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://chromecast.tvcast.in/v1.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script type="text/javascript" src="./v1_files/cast_receiver_framework.js">
+  </script>
+<script type="text/javascript" src="./v1_files/media_player.js"></script><script type="text/javascript" src="./v1_files/shaka-player.compiled.js"></script><script type="text/javascript" src="./v1_files/media_player(1).js"></script><script type="text/javascript" src="./v1_files/shaka-player.compiled(1).js"></script></head>
+
+<body>
+  <cast-media-player></cast-media-player>
+  <script>
+    const context = cast.framework.CastReceiverContext.getInstance();
+    const playerManager = context.getPlayerManager();
+    playerManager.addSupportedMediaCommands(cast.framework.messages.Command.STREAM_TRANSFER, true);
+
+    const SUPPORTED_MEDIA_COMMANDS = cast.framework.messages.Command.STREAM_VOLUME | cast.framework.messages.Command.STREAM_MUTE | cast.framework.messages.Command.PAUSE;
+
+    const playbackConfig = new cast.framework.PlaybackConfig();
+    playbackConfig.manifestRequestHandler = requestInfo => {
+      requestInfo.withCredentials = true;
+    };
+    playbackConfig.segmentRequestHandler = requestInfo => {
+      requestInfo.withCredentials = true;
+    };
+    cast.framework.CastReceiverContext.getInstance().start({
+      playbackConfig: playbackConfig,
+      supportedCommands: SUPPORTED_MEDIA_COMMANDS
+    });
+  </script>
+
+
+</body></html>
