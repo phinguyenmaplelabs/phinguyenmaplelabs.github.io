@@ -1,14 +1,19 @@
+
 <!DOCTYPE html>
-<!-- saved from url=(0035)https://chromecast.tvcast.in/v1.htm -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-  
+<!-- saved from url=(0073)https://assets-production.applicaster.com/chromecast-caf-receiver/v1.html -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
   <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
   <script type="text/javascript" src="media_player.js"></script>
   <script type="text/javascript" src="shaka-player.compiled.js"></script>
-  <style type="text/css">
+  <style type='text/css'>
       html, body {width: 100%; height: 100%; padding: 0; margin: 0;}
       body {overflow:hidden; background: #FFF;}
+      #iframe {width: 100%; height: 100%;}
   </style>
+</head>
+
 <body>
   <div id="container">
       <span id="content">Waiting...</span>
@@ -16,7 +21,7 @@
 
   <cast-media-player></cast-media-player>
 
-  <script type="text/javascript">
+  <script type='text/javascript'>
     window.onload = function() {
         window.castReceiverContext = cast.framework.CastReceiverContext.getInstance();
 
@@ -26,12 +31,10 @@
 
         const playbackConfig = new cast.framework.PlaybackConfig();
         playbackConfig.manifestRequestHandler = requestInfo => {
-          console.log("playbackConfig.manifestRequestHandler = requestInfo");
           requestInfo.withCredentials = true;
         };
 
         playbackConfig.segmentRequestHandler = requestInfo => {
-          console.log("playbackConfig.segmentRequestHandler = requestInfo");
           requestInfo.withCredentials = true;
         };
 
@@ -45,14 +48,32 @@
 
           if (msg.type === 'loc') {
             updateLocation(msg.url);
+            //updateLocation("https://mnmedias.api.telequebec.tv/m3u8/29880.m3u8");
           }
+          // console.log("Message received from " + 
+          //               "[" +  e.senderId +  "] " +
+          //               ": " + msg);
+          // document.getElementById("content").innerHTML = message;
+
+          //castReceiverContext.sendCustomMessage(CUSTOM_CHANNEL, e.senderId, e.data);
+          // if (msg.type === 'iframe') updateFrame(msg.url);
+          
         });
 
         options.playbackConfig = playbackConfig;
         options.supportedCommands = SUPPORTED_MEDIA_COMMANDS;
 
         window.castReceiverContext.start(options);
+      updateFrame('http://tiki.vn');
     };
+
+    // Update the iframe src
+    // warning: watch out for X-Frame-Options -> DENY
+    function updateFrame(url) {
+      window.castReceiverContext.setApplicationState('Now Playing: ' + url);
+      document.getElementById('iframe').src = url;
+    }
+
       // Set the window location to the URL
       // warning: this reciever dies essentially, because you navigated away
     function updateLocation(url) {
