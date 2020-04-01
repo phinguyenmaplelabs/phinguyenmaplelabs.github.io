@@ -26,10 +26,12 @@
 
         const playbackConfig = new cast.framework.PlaybackConfig();
         playbackConfig.manifestRequestHandler = requestInfo => {
+          console.log("playbackConfig.manifestRequestHandler = requestInfo");
           requestInfo.withCredentials = true;
         };
 
         playbackConfig.segmentRequestHandler = requestInfo => {
+          console.log("playbackConfig.segmentRequestHandler = requestInfo");
           requestInfo.withCredentials = true;
         };
 
