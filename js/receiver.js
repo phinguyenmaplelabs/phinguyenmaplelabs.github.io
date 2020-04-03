@@ -1,6 +1,6 @@
 
 const context = cast.framework.CastReceiverContext.getInstance();
-const playerManager = context.getPlayerManager();
+// const playerManager = context.getPlayerManager();
 
 // Register Events Liststener
 // playerManager.addEventListener(
