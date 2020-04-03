@@ -16,7 +16,7 @@ playerManager.addEventListener(
 // 	}
 // );
 
-context.start(options);
+context.start();
 
 function hanldeEvent(event) {
 	console.log(event);
