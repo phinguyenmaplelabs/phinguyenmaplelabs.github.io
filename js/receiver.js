@@ -3,11 +3,11 @@ const context = cast.framework.CastReceiverContext.getInstance();
 const playerManager = context.getPlayerManager();
 
 // Register Events Liststener
-playerManager.addEventListener(
-	cast.framework.events.EventType.MEDIA_STATUS, (event) => {
-		hanldeEvent(event);
-	}
-);
+// playerManager.addEventListener(
+// 	cast.framework.events.EventType.MEDIA_STATUS, (event) => {
+// 		hanldeEvent(event);
+// 	}
+// );
 
 // Register Messages Liststener
 // playerManager.setMessageInterceptor(
@@ -18,9 +18,9 @@ playerManager.addEventListener(
 
 context.start();
 
-function hanldeEvent(event) {
-	console.log(event);
-}
+// function hanldeEvent(event) {
+// 	console.log(event);
+// }
 
 // function handleMessage(loadRequestData) {
 // 	console.log(loadRequestData);
