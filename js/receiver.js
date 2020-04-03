@@ -10,11 +10,11 @@ playerManager.addEventListener(
 );
 
 // Register Messages Liststener
-playerManager.setMessageInterceptor(
-	cast.framework.messages.MessageType.LOAD, loadRequestData => {
-		handleMessage(loadRequestData);
-	}
-);
+// playerManager.setMessageInterceptor(
+// 	cast.framework.messages.MessageType.LOAD, loadRequestData => {
+// 		return handleMessage(loadRequestData);
+// 	}
+// );
 
 context.start(options);
 
@@ -22,6 +22,6 @@ function hanldeEvent(event) {
 	console.log(event);
 }
 
-function handleMessage(loadRequestData) {
-	console.log(loadRequestData);
-}
+// function handleMessage(loadRequestData) {
+// 	console.log(loadRequestData);
+// }
