@@ -1,9 +1,9 @@
 body {
-  --playback-logo-image: url('http://maplelabs.co/wp-content/uploads/2020/04/100x100-1.png');
+  --playback-logo-image: url('images/icon.png');
 }
 cast-media-player {
   --theme-hue: 100;
   --progress-color: rgb(0, 255, 0);
-  --splash-image: url('http://maplelabs.co/wp-content/uploads/2020/04/100x100-1.png');
+  --splash-image: url('images/icon.png');
   --splash-size: 100px 100px;
 }
