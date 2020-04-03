@@ -5,5 +5,5 @@ cast-media-player {
   --theme-hue: 100;
   --progress-color: rgb(0, 255, 0);
   --splash-image: url('http://maplelabs.co/wp-content/uploads/2020/04/100x100-1.png');
-  --splash-size: cover;
+  --splash-size: 100px 100px;
 }
