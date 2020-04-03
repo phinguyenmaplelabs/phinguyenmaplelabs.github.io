@@ -5,7 +5,7 @@ const playerManager = context.getPlayerManager();
 // Register Events Liststener
 playerManager.addEventListener(
 	cast.framework.events.EventType.MEDIA_STATUS, (event) => {
-		hanldeEvent(event)
+		hanldeEvent(event);
 	}
 );
 
