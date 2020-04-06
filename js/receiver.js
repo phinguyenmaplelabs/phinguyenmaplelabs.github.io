@@ -14,6 +14,7 @@ playerManager.addEventListener(
 // Register Messages Liststener
 const CHANNEL = 'urn:x-cast:com.tvcast.screenmirror';
 context.addCustomMessageListener(CHANNEL, function(customEvent) {
+	alert(customEvent.data);
   // handle customEvent.
   context.sendCustomMessage(CHANNEL, customEvent.senderId, {
           message: 'World',
