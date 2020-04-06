@@ -12,18 +12,16 @@ playerManager.addEventListener(
 );
 
 // Register Messages Liststener
-// playerManager.setMessageInterceptor(
-// 	cast.framework.messages.MessageType.LOAD, loadRequestData => {
-// 		return handleMessage(loadRequestData);
-// 	}
-// );
+const CHANNEL = 'urn:x-cast:com.tvcast.screenmirror';
+context.addCustomMessageListener(CHANNEL, function(customEvent) {
+  console.log(customEvent.data)
+	context.sendCustomMessage(CHANNEL, customEvent.senderId, {
+          message: 'World',
+ 	})
+});
 
 context.start();
 
 function hanldeEvent(event) {
 	console.log(event);
 }
-
-// function handleMessage(loadRequestData) {
-// 	console.log(loadRequestData);
-// }
