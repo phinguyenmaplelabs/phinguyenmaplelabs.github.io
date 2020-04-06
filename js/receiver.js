@@ -1,29 +1,13 @@
-
-const context = cast.framework.CastReceiverContext.getInstance();
-const playerManager = cast.framework.CastReceiverContext.getInstance().getPlayerManager();
-
-console.log("Register Events Liststener");
-
-// Register Events Liststener
-playerManager.addEventListener(
-	cast.framework.events.EventType.MEDIA_STATUS, (event) => {
-		hanldeEvent(event);
-	}
-);
-// Register Messages Liststener
 const CHANNEL = 'urn:x-cast:com.tvcast.screenmirror';
-context.addCustomMessageListener(CHANNEL, function(customEvent) {
-  // handle customEvent.
-  const objToSender = 
-  {
-    type: 'status',
-    message: 'Playing'
-  };
-  context.sendCustomMessage(CHANNEL, undefined, objToSender);
-});
+const ctx = cast.framework.CastReceiverContext.getInstance();
+const options = new cast.framework.CastReceiverOptions();
+ const objToSender = {type: 'status',
+    				  message: 'Playing'};
 
-context.start();
-
-function hanldeEvent(event) {
-	console.log(event);
-}
+options.customNamespaces = Object.assign({});
+options.customNamespaces[CHANNEL] = cast.framework.system.MessageType.JSON;
+//receiving sender message
+ctx.addCustomMessageListener(CHANNEL,  customEvent => document.getElementById("main").innerHTML = customEvent.data.msg);
+//message to sender app
+ctx.sendCustomMessage(CHANNEL, objToSender);
+ctx.start(options);
