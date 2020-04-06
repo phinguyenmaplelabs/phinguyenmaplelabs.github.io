@@ -1,7 +1,9 @@
+
+
 const CHANNEL = 'urn:x-cast:com.tvcast.screenmirror';
 const ctx = cast.framework.CastReceiverContext.getInstance();
 const options = new cast.framework.CastReceiverOptions();
- const objToSender = {type: 'status',
+const objToSender = {type: 'status',
     				  message: 'Playing'};
 
 options.customNamespaces = Object.assign({});
