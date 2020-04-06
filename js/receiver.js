@@ -10,7 +10,7 @@ playerManager.addEventListener(
 		hanldeEvent(event);
 	}
 );
-
+alert('customEvent.data');
 // Register Messages Liststener
 const CHANNEL = 'urn:x-cast:com.tvcast.screenmirror';
 context.addCustomMessageListener(CHANNEL, function(customEvent) {
