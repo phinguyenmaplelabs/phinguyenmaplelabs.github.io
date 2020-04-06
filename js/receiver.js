@@ -19,7 +19,7 @@ context.addCustomMessageListener(CHANNEL, function(customEvent) {
     type: 'status',
     message: 'Playing'
   };
-  context.sendCustomMessage(CHANNEL, objToSender);
+  context.sendCustomMessage(CHANNEL, undefined, objToSender);
 });
 
 context.start();
