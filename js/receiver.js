@@ -10,15 +10,16 @@ playerManager.addEventListener(
 		hanldeEvent(event);
 	}
 );
-alert('customEvent.data');
 // Register Messages Liststener
 const CHANNEL = 'urn:x-cast:com.tvcast.screenmirror';
 context.addCustomMessageListener(CHANNEL, function(customEvent) {
-	alert(customEvent.data);
   // handle customEvent.
-  context.sendCustomMessage(CHANNEL, customEvent.senderId, {
-          message: 'World',
- 	});
+  const objToSender = 
+  {
+    type: 'status',
+    message: 'Playing'
+  };
+  context.sendCustomMessage(CHANNEL, objToSender);
 });
 
 context.start();
