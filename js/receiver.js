@@ -7,7 +7,8 @@ const options = new cast.framework.CastReceiverOptions();
 options.customNamespaces = Object.assign({});
 options.customNamespaces[CHANNEL] = cast.framework.system.MessageType.JSON;
 //receiving sender message
-ctx.addCustomMessageListener(CHANNEL,  customEvent => document.getElementById("main").innerHTML = customEvent.data.msg);
-//message to sender app
-ctx.sendCustomMessage(CHANNEL, objToSender);
+ctx.addCustomMessageListener(CHANNEL, function(customEvent) {
+	document.getElementById("main").innerHTML = customEvent.data.msg;
+	ctx.sendCustomMessage(CHANNEL, customEvent.senderId, objToSender);
+});
 ctx.start(options);
