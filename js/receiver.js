@@ -8,6 +8,9 @@ function main() {
 	//receiving sender message
 	ctx.addCustomMessageListener(CHANNEL, function(customEvent) {
 		console.log(customEvent);
+		showHidePlayer(false);
+		showHideIFrame(true);
+		document.getElementById('iframe').src = 'https://tiki.vn';
 	});
 	ctx.start();
 	showHidePlayer(true);
