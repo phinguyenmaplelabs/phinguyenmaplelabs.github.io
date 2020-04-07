@@ -10,27 +10,27 @@ function main() {
 		console.log(customEvent);
 		showHidePlayer(false);
 		showHideIFrame(true);
+		document.getElementById('iframe').src = 'https://tiki.vn';
 	});
 	ctx.start();
 	showHidePlayer(true);
 	showHideIFrame(false);
-	document.getElementById('iframe').src = 'https://tiki.vn';
 }
 
 function showHidePlayer(show) {
 	var element = document.getElementById("cast_player");
 	if (show) {
-		element.style.display = "block";
+		element.style.visibility = 'visibility';
 	}else{
-		element.style.display = "none";
+		element.style.visibility = 'hidden';
 	}
 }
 
 function showHideIFrame(show) {
 	var element = document.getElementById("iframe");
 	if (show) {
-		element.style.display = "block";
+		element.style.visibility = 'visibility';
 	}else{
-		element.style.display = "none";
+		element.style.visibility = 'hidden';
 	}
 }
