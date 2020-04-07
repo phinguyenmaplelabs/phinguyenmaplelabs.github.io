@@ -10,11 +10,10 @@ function main() {
 		console.log(customEvent);
 		showHidePlayer(false);
 		showHideIFrame(true);
-		
 	});
 	ctx.start();
-	showHidePlayer(false);
-	showHideIFrame(true);
+	showHidePlayer(true);
+	showHideIFrame(false);
 	document.getElementById('iframe').src = 'https://tiki.vn';
 }
 
