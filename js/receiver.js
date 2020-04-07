@@ -10,7 +10,7 @@ function main() {
 		console.log(customEvent);
 		showHidePlayer(false);
 		showHideIFrame(true);
-		document.getElementById('iframe').src = 'https://tiki.vn';
+		document.getElementById('browserIframe').src = 'https://tiki.vn';
 	});
 	ctx.start();
 	showHidePlayer(true);
@@ -27,7 +27,7 @@ function showHidePlayer(show) {
 }
 
 function showHideIFrame(show) {
-	var element = document.getElementById("iframe");
+	var element = document.getElementById("browserIframe");
 	if (show) {
 		element.style.visibility = 'visibility';
 	}else{
