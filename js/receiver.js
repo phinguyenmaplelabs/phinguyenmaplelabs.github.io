@@ -9,12 +9,9 @@ function main() {
 	ctx.addCustomMessageListener(CHANNEL, function(customEvent) {
 		console.log(customEvent);
 		showHidePlayer(false);
-		showHideIFrame(true);
 		document.getElementById('browserIframe').src = 'https://tiki.vn';
 	});
 	ctx.start();
-	showHidePlayer(true);
-	showHideIFrame(false);
 }
 
 function showHidePlayer(show) {
