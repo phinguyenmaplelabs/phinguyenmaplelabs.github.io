@@ -6,6 +6,11 @@ function main() {
 	const CHANNEL 		= 'urn:x-cast:com.tvcast.screenmirror';
 	const ctx 			= cast.framework.CastReceiverContext.getInstance();
 	const playerManager = ctx.getPlayerManager();
+	const commands      = cast.framework.messages.Command;
+	/*
+	* Register Player Command
+	*/
+	playerManager.setSupportedMediaCommands(commands.SEEK | commands.PAUSE | commands.STREAM_VOLUME | commands.STREAM_MUTE | commands.SKIP_AD);
 	/*
 	*	Handle Player
 	*/
