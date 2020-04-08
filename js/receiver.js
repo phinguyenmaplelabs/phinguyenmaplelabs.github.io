@@ -3,34 +3,41 @@
 main();
 
 function main() {
-	const CHANNEL = 'urn:x-cast:com.tvcast.screenmirror';
-	const ctx = cast.framework.CastReceiverContext.getInstance();
-	//receiving sender message
+	const CHANNEL 		= 'urn:x-cast:com.tvcast.screenmirror';
+	const ctx 			= cast.framework.CastReceiverContext.getInstance();
+	const playerManager = context.getPlayerManager();
+	hideIframe();
+	/*
+	*	Handle Player
+	*/
+	playerManager.setMessageInterceptor(cast.framework.messages.MessageType.LOAD, loadRequestData =>{
+		const error = new cast.framework.messages.ErrorData(
+                      cast.framework.messages.ErrorType.LOAD_FAILED);
+      if (!loadRequestData.media) {
+        error.reason = cast.framework.messages.ErrorReason.INVALID_PARAM;
+        return error;
+      }
+      hideIframe();
+      return loadRequestData;
+	});
+
+	/*
+	* Handle WebBrowser
+	*/
 	ctx.addCustomMessageListener(CHANNEL, function(customEvent) {
 		console.log(customEvent);
-		showHidePlayer(false);
-		showHideIFrame(true);
+		showIframe();
 		document.getElementById('browserIframe').src = 'https://tiki.vn';
 	});
 	ctx.start();
-	showHidePlayer(true);
-	showHideIFrame(false);
 }
 
-function showHidePlayer(show) {
-	var element = document.getElementById("cast_player");
-	if (show) {
-		element.style.visibility = 'visibility';
-	}else{
-		element.style.visibility = 'hidden';
-	}
+function showIframe() {
+	document.getElementById("cast_player").style.visibility 	= 'hidden';
+	document.getElementById("browserIframe").style.visibility 	= 'visibility';
 }
 
-function showHideIFrame(show) {
-	var element = document.getElementById("browserIframe");
-	if (show) {
-		element.style.visibility = 'visibility';
-	}else{
-		element.style.visibility = 'hidden';
-	}
+function hideIframe() {
+	document.getElementById("cast_player").style.visibility 	= 'visibility';
+	document.getElementById("browserIframe").style.visibility 	= 'hidden';
 }
