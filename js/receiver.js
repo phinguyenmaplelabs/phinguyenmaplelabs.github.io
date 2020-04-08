@@ -28,6 +28,8 @@ function main() {
 		if (js.type == 'iframe') {
 			showIframe();
 			document.getElementById('browserIframe').src = js.url;
+		}else if (js.type == 'close_browser') {
+			hideIframe();
 		}
 	});
 	ctx.start();
