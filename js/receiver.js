@@ -32,15 +32,11 @@ function main() {
 }
 
 function showIframe() {
-	var player = document.getElementById("cast_player");
-	var iframe = document.getElementById("browserIframe");
-	player.style.visibility = 'hidden';
-	iframe.style.visibility = 'visibility';
+	document.getElementById("cast_player").visibility = 'hidden';
+	document.getElementById("browserIframe").visibility = 'visibility';
 }
 
 function hideIframe() {
-	var player = document.getElementById("cast_player");
-	var iframe = document.getElementById("browserIframe");
-	player.style.visibility = 'visibility';
-	iframe.style.visibility = 'hidden';
+	document.getElementById("cast_player").style.visibility = 'visibility';
+	document.getElementById("browserIframe").style.visibility = 'hidden';
 }
