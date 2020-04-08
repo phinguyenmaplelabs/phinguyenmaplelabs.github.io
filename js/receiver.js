@@ -16,7 +16,6 @@ function main() {
         error.reason = cast.framework.messages.ErrorReason.INVALID_PARAM;
         return error;
 	  }
-	  console.log('anhphidetrai');
       hideIframe();
       return loadRequestData;
 	});
@@ -25,9 +24,7 @@ function main() {
 	* Handle WebBrowser
 	*/
 	ctx.addCustomMessageListener(CHANNEL, function(customEvent) {
-		var msg = customEvent.data;
-		var js = JSON.parse(msg);
-		console.log(msg);
+		var js = customEvent.data;
 		if (js.type == 'iframe') {
 			showIframe();
 			document.getElementById('browserIframe').src = js.url;
