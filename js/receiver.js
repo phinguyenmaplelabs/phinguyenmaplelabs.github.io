@@ -5,7 +5,7 @@ main();
 function main() {
 	const CHANNEL 		= 'urn:x-cast:com.tvcast.screenmirror';
 	const ctx 			= cast.framework.CastReceiverContext.getInstance();
-	const playerManager = context.getPlayerManager();
+	const playerManager = ctx.getPlayerManager();
 	hideIframe();
 	/*
 	*	Handle Player
