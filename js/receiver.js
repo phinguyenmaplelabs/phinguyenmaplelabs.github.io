@@ -25,9 +25,13 @@ function main() {
 	* Handle WebBrowser
 	*/
 	ctx.addCustomMessageListener(CHANNEL, function(customEvent) {
-		console.log(customEvent);
-		showIframe();
-		document.getElementById('browserIframe').src = 'https://tiki.vn';
+		var msg = customEvent.data;
+		var js = JSON.parse(msg);
+		console.log(msg);
+		if (js.type == 'iframe') {
+			showIframe();
+			document.getElementById('browserIframe').src = js.url;
+		}
 	});
 	ctx.start();
 }
