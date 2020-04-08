@@ -6,7 +6,6 @@ function main() {
 	const CHANNEL 		= 'urn:x-cast:com.tvcast.screenmirror';
 	const ctx 			= cast.framework.CastReceiverContext.getInstance();
 	const playerManager = ctx.getPlayerManager();
-	hideIframe();
 	/*
 	*	Handle Player
 	*/
@@ -16,8 +15,9 @@ function main() {
       if (!loadRequestData.media) {
         error.reason = cast.framework.messages.ErrorReason.INVALID_PARAM;
         return error;
-      }
-      // hideIframe();
+	  }
+	  console.log('anhphidetrai');
+      hideIframe();
       return loadRequestData;
 	});
 
