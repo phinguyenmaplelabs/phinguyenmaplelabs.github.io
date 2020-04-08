@@ -33,10 +33,10 @@ function main() {
 
 function showIframe() {
 	document.getElementById("cast_player").visibility = 'hidden';
-	document.getElementById("browserIframe").visibility = 'visibility';
+	document.getElementById("browserIframe").visibility = 'visible';
 }
 
 function hideIframe() {
-	document.getElementById("cast_player").style.visibility = 'visibility';
+	document.getElementById("cast_player").style.visibility = 'visible';
 	document.getElementById("browserIframe").style.visibility = 'hidden';
 }
