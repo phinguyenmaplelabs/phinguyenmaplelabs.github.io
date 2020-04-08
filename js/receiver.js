@@ -33,8 +33,8 @@ function main() {
 }
 
 function showIframe() {
-	document.getElementById("cast_player").visibility = 'hidden';
-	document.getElementById("browserIframe").visibility = 'visible';
+	document.getElementById("cast_player").style.visibility = 'hidden';
+	document.getElementById("browserIframe").style.visibility = 'visible';
 }
 
 function hideIframe() {
