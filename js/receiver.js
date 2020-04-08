@@ -34,13 +34,13 @@ function main() {
 function showIframe() {
 	var player = document.getElementById("cast_player");
 	var iframe = document.getElementById("browserIframe");
-	player.style.visibility = 'visibility';
-	iframe.style.visibility = 'hidden';
+	player.style.visibility = 'hidden';
+	iframe.style.visibility = 'visibility';
 }
 
 function hideIframe() {
 	var player = document.getElementById("cast_player");
 	var iframe = document.getElementById("browserIframe");
-	player.style.visibility = 'hidden';
-	iframe.style.visibility = 'visibility';
+	player.style.visibility = 'visibility';
+	iframe.style.visibility = 'hidden';
 }
