@@ -11,6 +11,7 @@ function main() {
 	* Register Player Command
 	*/
 	playerManager.setSupportedMediaCommands(commands.SEEK | commands.PAUSE | commands.STREAM_VOLUME | commands.STREAM_MUTE | commands.SKIP_AD);
+	playerManager.removeSupportedMediaCommands(cast.framework.messages.Command.SEEK, true);
 	/*
 	*	Handle Player
 	*/
