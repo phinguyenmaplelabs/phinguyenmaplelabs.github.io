@@ -22,7 +22,6 @@ function main() {
         return error;
 	  }
 	  hideIframe();
-	  loadRequestData.media.streamType = cast.framework.messages.StreamType.LIVE;
       return loadRequestData;
 	});
 
