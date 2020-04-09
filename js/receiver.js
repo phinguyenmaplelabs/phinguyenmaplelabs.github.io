@@ -10,7 +10,7 @@ function main() {
 	/*
 	* Register Player Command
 	*/
-	playerManager.setSupportedMediaCommands(commands.SEEK | commands.PAUSE | commands.STREAM_VOLUME | commands.STREAM_MUTE | commands.SKIP_AD);
+	playerManager.setSupportedMediaCommands(commands.SEEK | commands.PAUSE | commands.STREAM_VOLUME | commands.STREAM_MUTE);
 	playerManager.removeSupportedMediaCommands(cast.framework.messages.Command.SEEK, true);
 	/*
 	*	Handle Player
