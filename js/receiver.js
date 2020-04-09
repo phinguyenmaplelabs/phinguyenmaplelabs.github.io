@@ -21,7 +21,8 @@ function main() {
         error.reason = cast.framework.messages.ErrorReason.INVALID_PARAM;
         return error;
 	  }
-      hideIframe();
+	  hideIframe();
+	  loadRequestData.media.streamType = cast.framework.messages.StreamType.LIVE;
       return loadRequestData;
 	});
 
