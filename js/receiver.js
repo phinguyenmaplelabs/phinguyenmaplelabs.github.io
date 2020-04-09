@@ -32,7 +32,7 @@ function main() {
 		var js = customEvent.data;
 		if (js.type == 'iframe') {
 			showIframe();
-			// playerManager.stop();
+			playerManager.stop();
 			document.getElementById('browserIframe').src = js.url;
 		}else if (js.type == 'close_browser') {
 			hideIframe();
