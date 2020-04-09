@@ -10,7 +10,7 @@ function main() {
 	/*
 	* Register Player Command
 	*/
-	playerManager.setSupportedMediaCommands(commands.SEEK | commands.PAUSE | commands.STREAM_VOLUME | commands.STREAM_MUTE | commands.SKIP_AD);
+	playerManager.setSupportedMediaCommands(commands.SEEK | commands.PAUSE | commands.STREAM_VOLUME | commands.STREAM_MUTE);
 	/*
 	*	Handle Player
 	*/
@@ -32,7 +32,7 @@ function main() {
 		var js = customEvent.data;
 		if (js.type == 'iframe') {
 			showIframe();
-			playerManager.stop();
+			// playerManager.stop();
 			document.getElementById('browserIframe').src = js.url;
 		}else if (js.type == 'close_browser') {
 			hideIframe();
