@@ -41,7 +41,7 @@ function main() {
 	*/
 	playbackConfig.autoResumeDuration = 1;
 	options.playbackConfig 		= playbackConfig;
-	// options.supportedCommands 	= commands.SEEK | commands.PAUSE | commands.STREAM_VOLUME | commands.STREAM_MUTE
+	options.supportedCommands 	= commands.PAUSE | commands.STREAM_VOLUME | commands.STREAM_MUTE
 	ctx.start(options);
 }
 
