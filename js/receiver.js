@@ -51,6 +51,7 @@ function showIframe() {
 }
 
 function hideIframe() {
+	document.getElementById('browserIframe').src = '';
 	document.getElementById("cast_player").style.visibility = 'visible';
 	document.getElementById("browserIframe").style.visibility = 'hidden';
 }
