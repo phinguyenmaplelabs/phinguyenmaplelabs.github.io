@@ -48,7 +48,7 @@ const playbackConfig = new cast.framework.PlaybackConfig();
 
 // Set the player to start playback as soon as there are five seconds of
 // media content buffered. Default is 10.
-playbackConfig.autoResumeDuration = 5;
+playbackConfig.autoResumeDuration = 1;
 
 // Set the available buttons in the UI controls.
 const controls = cast.framework.ui.Controls.getInstance();
