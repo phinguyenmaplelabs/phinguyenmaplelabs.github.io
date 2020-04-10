@@ -8,3 +8,6 @@ cast-media-player {
   --logo-image: url('images/icon.png');
   --splash-size: 100px 100px;
 }
+iframe {
+  visibility: hidden;
+}
